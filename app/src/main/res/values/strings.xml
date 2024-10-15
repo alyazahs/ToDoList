@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">ToDoList</string>
+    <string name="submit">Submit</string>
+    <string name="nama">User</string>
+    <string name="deskripsi">Description</string>
+    <string name="title_homepage">Matkul</string>
+    <string name="list_matkul">List of Matkul</string>
+    <string name="hint_task">Masukkan Tugas</string>
+    <string name="add_task">Tambah Tugas</string>
+    <string name="tugas">Membuat Aplikasi</string>
+    <string name="user">To Do List</string>
+    <string name="list_user">List of User</string>
+    <string name="pass">Password</string>
+    <string name="user_add">Zahra</string>
+    <!--    <string name="hello_blank_fragment">Hello blank fragment</string>-->
+<!--    <string name="title_homepage">Atur hari produktifmu</string>-->
+<!--    <string name="desc_homepage">Yuk  belajar management waktu dengan kami, agar bisa sukses dalam kehidupan</string>-->
+    <string name="title_add">Mobile II</string>
+    <string name="desc_add">Cek tugas kamu apa aja sih,jangan sampai terlwat ya</string>
+    <string name="date">Jumat, 10 Oktober 2024</string>
+<!--    <string name="list_matkul">List Mata Kuliah</string>-->
+<!--    <string name="list_kegiatan">List Kegiatan</string>-->
+<!--    <string name="jumlah_kegiatan">Jumlah Kegiatan %1$d</string>-->
+<!--    <string name="kegiatan">Sampai di lokasi shooting</string>-->
+<!--    <string name="waktu_pengkondisian">%1$s</string>-->
+<!--    <string name="waktu">%1$s - %2$s</string>-->
+<!--    <string name="nama">Nama Mata Kuliah</string>-->
+<!--    <string name="deskripsi">Deskripsi</string>-->
+<!--    <string name="empty">Harap diisi</string>-->
+
+</resources>
