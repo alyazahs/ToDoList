@@ -16,12 +16,12 @@ class MatkulAdapter(
     private val onDeleteClick: (Matkul) -> Unit
 ) : RecyclerView.Adapter<MatkulAdapter.MatkulViewHolder>() {
 
-    private var matkul = listOf<Matkul>()
+    private var matkuls = listOf<Matkul>()
 
     inner class MatkulViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nama: TextView = itemView.findViewById(R.id.nama)
         val deskripsi: TextView = itemView.findViewById(R.id.deskripsi)
-        val btnEdit: Button = itemView.findViewById(R.id.btn_editMk) // Assuming you have edit button
+        val btnEdit: Button = itemView.findViewById(R.id.btn_editMk)
         val btnDelete: Button = itemView.findViewById(R.id.btn_deleteMk)
     }
 
@@ -32,7 +32,7 @@ class MatkulAdapter(
     }
 
     override fun onBindViewHolder(holder: MatkulViewHolder, position: Int) {
-        val matkul = matkul[position]
+        val matkul = matkuls[position]
         holder.nama.text = matkul.namaMatkul
         holder.deskripsi.text = matkul.deskripsi
 
@@ -44,21 +44,19 @@ class MatkulAdapter(
             context.startActivity(intent)
         }
 
-        holder.itemView.setOnLongClickListener {
+        holder.btnEdit.setOnClickListener {
             onEditClick(matkul)
-            true
         }
 
-        holder.itemView.setOnLongClickListener {
+        holder.btnDelete.setOnClickListener {
             onDeleteClick(matkul)
-            true
         }
     }
 
-    override fun getItemCount(): Int = matkul.size
+    override fun getItemCount(): Int = matkuls.size
 
-    fun setMatkul(matkul: List<Matkul>) {
-        this.matkul = matkul
+    fun setMatkul(matkuls: List<Matkul>) {
+        this.matkuls = matkuls
         notifyDataSetChanged()
     }
 }

@@ -49,7 +49,11 @@ class MatkulActivity : AppCompatActivity() {
 
     private fun editMatkul(matkul: Matkul) {
         // Logika untuk mengedit matkul
-        Toast.makeText(this, "Edit Matkul: ${matkul.namaMatkul}", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, AddMatkulActivity::class.java).apply {
+            putExtra("MATKUL_ID", matkul.id)
+            putExtra("USER_ID", userId)
+        }
+        startActivity(intent)
     }
 
     private fun deleteMatkul(matkul: Matkul) {
