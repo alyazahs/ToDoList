@@ -11,11 +11,11 @@ import com.alyazah.todolist.entity.Matkul
 import com.alyazah.todolist.entity.Tugas
 import com.alyazah.todolist.entity.User
 
-@Database(entities = [Matkul::class, Tugas::class, User::class], version = 1, exportSchema = false)
+@Database(entities = [User::class, Matkul::class, Tugas::class], version = 1, exportSchema = false)
 abstract class TodoDatabase : RoomDatabase() {
+    abstract fun userDao(): UserDao
     abstract fun matkulDao(): MatkulDao
     abstract fun tugasDao(): TugasDao
-    abstract fun userDao(): UserDao
 
     companion object {
         @Volatile

@@ -2,12 +2,12 @@
     <string name="app_name">ToDoList</string>
     <string name="submit">Submit</string>
     <string name="nama">User</string>
-    <string name="deskripsi">Description</string>
+    <string name="deskripsi">Deskripsi</string>
     <string name="title_homepage">Matkul</string>
     <string name="list_matkul">List of Matkul</string>
     <string name="hint_task">Masukkan Tugas</string>
     <string name="add_task">Tambah Tugas</string>
-    <string name="tugas">Membuat Aplikasi</string>
+    <string name="tugas">Tugas</string>
     <string name="user">To Do List</string>
     <string name="list_user">List of User</string>
     <string name="pass">Password</string>
@@ -24,7 +24,7 @@
 <!--    <string name="kegiatan">Sampai di lokasi shooting</string>-->
 <!--    <string name="waktu_pengkondisian">%1$s</string>-->
 <!--    <string name="waktu">%1$s - %2$s</string>-->
-<!--    <string name="nama">Nama Mata Kuliah</string>-->
+    <string name="matkul">Nama Mata Kuliah</string>
 <!--    <string name="deskripsi">Deskripsi</string>-->
 <!--    <string name="empty">Harap diisi</string>-->
 
