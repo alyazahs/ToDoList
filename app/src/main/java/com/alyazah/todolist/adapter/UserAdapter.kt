@@ -63,24 +63,35 @@ class UserAdapter(
         val dialogView = LayoutInflater.from(context).inflate(R.layout.login, null)
         val usernameInput = dialogView.findViewById<TextInputEditText>(R.id.username_input)
         val passwordInput = dialogView.findViewById<TextInputEditText>(R.id.password_input)
+        val btnLogin = dialogView.findViewById<Button>(R.id.btn_login)
 
-        AlertDialog.Builder(context)
+        val dialog = AlertDialog.Builder(context)
             .setView(dialogView)
-            .setPositiveButton("Login") { _, _ ->
-                val username = usernameInput.text.toString()
-                val password = passwordInput.text.toString()
+            .setCancelable(false) // Dialog tidak bisa ditutup tanpa aksi
+            .create()
 
-                // Verifikasi username dan password
-                if (username == user.username && password == user.password) {
-                    val intent = Intent(context, MatkulActivity::class.java).apply {
-                        putExtra("USER_ID", user.id) // Kirim userId
-                    }
-                    context.startActivity(intent)
-                } else {
-                    Toast.makeText(context, "Login gagal", Toast.LENGTH_SHORT).show()
+        dialog.show()
+
+        btnLogin.setOnClickListener {
+            val username = usernameInput.text.toString().trim()
+            val password = passwordInput.text.toString().trim()
+
+            // Verifikasi username dan password
+            if (username == user.username && password == user.password) {
+                // Login berhasil, arahkan ke MatkulActivity
+                val intent = Intent(context, MatkulActivity::class.java).apply {
+                    putExtra("USER_ID", user.id) // Kirim userId ke MatkulActivity
                 }
+                context.startActivity(intent)
+                dialog.dismiss() // Tutup dialog setelah login berhasil
+            } else {
+                // Login gagal, tampilkan pesan error
+                Toast.makeText(
+                    context,
+                    "Login gagal. Cek username atau password.",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
-            .setNegativeButton("Batal", null)
-            .show()
+        }
     }
 }
