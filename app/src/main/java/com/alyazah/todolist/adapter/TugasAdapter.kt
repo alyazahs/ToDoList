@@ -10,7 +10,6 @@ import com.alyazah.todolist.R
 import com.alyazah.todolist.entity.Tugas
 
 class TugasAdapter(
-    private val onEditClick: (Tugas) -> Unit,
     private val onDeleteClick: (Tugas) -> Unit
 ) : RecyclerView.Adapter<TugasAdapter.TugasViewHolder>() {
 
@@ -18,6 +17,7 @@ class TugasAdapter(
 
     inner class TugasViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nama: TextView = itemView.findViewById(R.id.namaTugas)
+        val btnDelete: Button = itemView.findViewById(R.id.btn_deleteTgs)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TugasViewHolder {
@@ -30,11 +30,7 @@ class TugasAdapter(
         val tugas = tugasList[position]
         holder.nama.text = tugas.namaTugas
 
-        holder.itemView.setOnClickListener {
-            onEditClick(tugas)
-        }
-
-        holder.itemView.setOnClickListener {
+        holder.btnDelete.setOnClickListener {
             onDeleteClick(tugas)
         }
     }
